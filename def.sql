@@ -1,6 +1,3 @@
-CREATE DATABASE pras;
-\c pras
-
 /*
     La tabla programas guarda el formulario de PRAs en una sola peticion
     Los comentarios señalan las caracteristicas y el funcionamiento de 
@@ -8,25 +5,25 @@ CREATE DATABASE pras;
 */
 
 
-CREATE TABLE programas( 
+CREATE TABLE IF NOT EXISTS programas( 
     id serial PRIMARY KEY,
-    tipo_auditoria INTEGER,             --Llave externa de la tabla tipo_auditoria
-    organo_fiscalizador INTEGER,        --Llave externa de la tabla organo_fiscalizador
+    tipo_auditoria INTEGER REFERENCES tipo_auditoria(id),           --Llave externa de la tabla tipo_auditoria
+    organo_fiscalizador INTEGER REFERENCES organo_fiscalizador,     --Llave externa de la tabla organo_fiscalizador
     anio_cuenta_publica DATE,
     num_auditoria VARCHAR (50),
-    tipo_entidad INTEGER,               --Llave externa de la tabla tipo_entidad
-    entidad INTEGER,                    --Llave externa de la tabla entidades 
-    estatus_auditoria INTEGER,          --Llave externa de la tabla estatus_auditorias
-    fondo INTEGER,                      --Llave externa de la tabla fondos
+    tipo_entidad INTEGER REFERENCES tipo_entidad,                   --Llave externa de la tabla tipo_entidad
+    entidad INTEGER REFERENCES entidades ,                          --Llave externa de la tabla entidades 
+    estatus_auditoria INTEGER REFERENCES estatus_auditorias,        --Llave externa de la tabla estatus_auditorias
+    fondo INTEGER REFERENCES fondos,                                --Llave externa de la tabla fondos
     inicio DATE, 
     cierre DATE, 
-    municipio INTEGER,                  --Llave externa de la tabla municipios
+    municipio INTEGER REFERENCES municipios,                        --Llave externa de la tabla municipios
     obra VARCHAR(150),
-    accion INTEGER,                     --Llave externa de la tabla acciones
-    observacion INTEGER,                --Llave externa de la tabla observaciones
-    estatus_observacion INTEGER,        --Llave externa de la tabla estatus de observaciones
-    clasificacion INTEGER,              --Llave externa de la tabla clasificaciones
-    tipo INTEGER,                       --Llave externa de la tabla tipos
+    accion INTEGER REFERENCES acciones,                             --Llave externa de la tabla acciones
+    observacion INTEGER REFERENCES observaciones,                   --Llave externa de la tabla observaciones
+    estatus_observacion INTEGER REFERENCES observaciones,           --Llave externa de la tabla estatus de observaciones
+    clasificacion INTEGER REFERENCES clasificaciones,               --Llave externa de la tabla clasificaciones
+    tipo INTEGER REFERENCES tipos,                                  --Llave externa de la tabla tipos
     observado FLOAT,
     solventado FLOAT,
     pendiente_solventar FLOAT,
@@ -98,54 +95,55 @@ CREATE TABLE municipios(
     id serial PRIMARY KEY,
     name VARCHAR (50) UNIQUE NOT NULL
 );
-INSERT INTO municipios(name) VALUES ("Abasolo");
-INSERT INTO municipios(name) VALUES ("Agualeguas");
-INSERT INTO municipios(name) VALUES ("Los Aldamas");
-INSERT INTO municipios(name) VALUES ("Allende");
-INSERT INTO municipios(name) VALUES ("Anahuac");
-INSERT INTO municipios(name) VALUES ("Apodaca");
-INSERT INTO municipios(name) VALUES ("Aramberri");
-INSERT INTO municipios(name) VALUES ("Bustamante");
-INSERT INTO municipios(name) VALUES ("Cadereyta Jimenez");
-INSERT INTO municipios(name) VALUES ("Carmen");
-INSERT INTO municipios(name) VALUES ("Cerralvo");
-INSERT INTO municipios(name) VALUES ("Cienega de Flores");
-INSERT INTO municipios(name) VALUES ("China");
-INSERT INTO municipios(name) VALUES ("Dr. Arroyo");
-INSERT INTO municipios(name) VALUES ("Dr. Coss");
-INSERT INTO municipios(name) VALUES ("Dr. Gonzalez");
-INSERT INTO municipios(name) VALUES ("Galeana");
-INSERT INTO municipios(name) VALUES ("Garcia");
-INSERT INTO municipios(name) VALUES ("San Pedro Garza Garcia");
-INSERT INTO municipios(name) VALUES ("Gral. Bravo");
-INSERT INTO municipios(name) VALUES ("Gral. Escobedo");
-INSERT INTO municipios(name) VALUES ("Gral. Teran");
-INSERT INTO municipios(name) VALUES ("Gral. Trevi");
-INSERT INTO municipios(name) VALUES ("Gral. Zaragoza");
-INSERT INTO municipios(name) VALUES ("Gral. Zuazua");
-INSERT INTO municipios(name) VALUES ("Guadalupe");
-INSERT INTO municipios(name) VALUES ("Los Herreras");
-INSERT INTO municipios(name) VALUES ("Higueras");
-INSERT INTO municipios(name) VALUES ("Hualahuises");
-INSERT INTO municipios(name) VALUES ("Iturbide");
-INSERT INTO municipios(name) VALUES ("Juarez");
-INSERT INTO municipios(name) VALUES ("Lampazos de Naranjo");
-INSERT INTO municipios(name) VALUES ("Linares");
-INSERT INTO municipios(name) VALUES ("Marin");
-INSERT INTO municipios(name) VALUES ("Melchor Ocampo");
-INSERT INTO municipios(name) VALUES ("Mier y Noriega");
-INSERT INTO municipios(name) VALUES ("Mina");
-INSERT INTO municipios(name) VALUES ("Montemorelos");
-INSERT INTO municipios(name) VALUES ("Monterrey");
-INSERT INTO municipios(name) VALUES ("Paras");
-INSERT INTO municipios(name) VALUES ("Pesqueria");
-INSERT INTO municipios(name) VALUES ("Los Ramones");
-INSERT INTO municipios(name) VALUES ("Rayones");
-INSERT INTO municipios(name) VALUES ("Sabinas Hidalgo");
-INSERT INTO municipios(name) VALUES ("Salinas Victoria");
-INSERT INTO municipios(name) VALUES ("San Nicolas de los Garza");
-INSERT INTO municipios(name) VALUES ("Hidalgo");
-INSERT INTO municipios(name) VALUES ("Santa Catarina");
-INSERT INTO municipios(name) VALUES ("Santiago");
-INSERT INTO municipios(name) VALUES ("Vallecillo");
-INSERT INTO municipios(name) VALUES ("Villaldam");
+INSERT INTO municipios(name) VALUES 
+("Abasolo"),
+("Agualeguas"),
+("Los Aldamas"),
+("Allende"),
+("Anahuac"),
+("Apodaca"),
+("Aramberri"),
+("Bustamante"),
+("Cadereyta Jimenez"),
+("Carmen"),
+("Cerralvo"),
+("Cienega de Flores"),
+("China"),
+("Dr. Arroyo"),
+("Dr. Coss"),
+("Dr. Gonzalez"),
+("Galeana"),
+("Garcia"),
+("San Pedro Garza Garcia"),
+("Gral. Bravo"),
+("Gral. Escobedo"),
+("Gral. Teran"),
+("Gral. Trevi"),
+("Gral. Zaragoza"),
+("Gral. Zuazua"),
+("Guadalupe"),
+("Los Herreras"),
+("Higueras"),
+("Hualahuises"),
+("Iturbide"),
+("Juarez"),
+("Lampazos de Naranjo"),
+("Linares"),
+("Marin"),
+("Melchor Ocampo"),
+("Mier y Noriega"),
+("Mina"),
+("Montemorelos"),
+("Monterrey"),
+("Paras"),
+("Pesqueria"),
+("Los Ramones"),
+("Rayones"),
+("Sabinas Hidalgo"),
+("Salinas Victoria"),
+("San Nicolas de los Garza"),
+("Hidalgo"),
+("Santa Catarina"),
+("Santiago"),
+("Vallecillo"),
+("Villaldam"),
