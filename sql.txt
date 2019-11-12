@@ -1,0 +1,109 @@
+CREATE DATABASE pras;
+\c pras
+
+/*
+La tabla programas guarda de una peticion
+*/
+
+
+
+
+
+La mayoria de las columnas 
+
+
+
+CREATE TABLE programas( 
+    id serial PRIMARY KEY,
+    tipo_auditoria INTEGER,
+    organo_fiscalizador INTEGER,
+    anio_cuenta_publica DATE,
+    num_auditoria VARCHAR (50),
+    tipo_entidad INTEGER,               //Llave exterior de tabla tipo_entidad
+    entidad INTEGER,                    //
+    estatus_auditoria INTEGER,          
+    fondo INTEGER,
+    inicio DATE,
+    cierre DATE,
+    municipio INTEGER,
+    obra VARCHAR(150),
+    accion INTEGER,                     //
+    observacion INTEGER,                //
+    estatus_observacion INTEGER,        //
+    clasificacion INTEGER,              //
+    tipo INTEGER,                       //
+    observado FLOAT,
+    solventado FLOAT,
+    pendiente_solventar FLOAT,
+    reintegrar FLOAT,
+    atendido FLOAT,
+    pendiente_atender FLOAT,
+    notificacion_solventacion DATE,
+    observaciones VARCHAR(1024),
+    documentos VARCHAR(512)
+);
+
+
+
+
+ -- Creacion del catalogo de auditorías
+CREATE TABLE auditorias( 
+    id serial PRIMARY KEY,
+    name VARCHAR (50) UNIQUE NOT NULL
+);
+INSERT INTO auditorias(name) VALUES ("Financiera");
+INSERT INTO auditorias(name) VALUES ("Desempeño");
+INSERT INTO auditorias(name) VALUES ("Obra Pública");
+INSERT INTO auditorias(name) VALUES ("Normativas");
+
+
+
+
+ -- Creacion del catalogo de organo_fiscalizador
+CREATE TABLE organo_fiscalizador( 
+    id serial PRIMARY KEY,
+    name VARCHAR (50) UNIQUE NOT NULL
+);
+INSERT INTO organo_fiscalizador(name) VALUES ("ASF");
+INSERT INTO organo_fiscalizador(name) VALUES ("SFP");
+INSERT INTO organo_fiscalizador(name) VALUES ("ASE");
+INSERT INTO organo_fiscalizador(name) VALUES ("CYTG");
+
+
+
+
+ -- Creacion del catalogo de organo_fiscalizador
+CREATE TABLE entidad( 
+    id serial PRIMARY KEY,
+    name VARCHAR (50) UNIQUE NOT NULL
+);
+INSERT INTO gobierno(name) VALUES ("Gobierno del Estado");
+INSERT INTO gobierno(name) VALUES ("Organismo");
+
+
+
+
+
+
+
+ -- Creacion del catalogo de organo_fiscalizador
+CREATE TABLE estatus_auditoria( 
+    id serial PRIMARY KEY,
+    name VARCHAR (50) UNIQUE NOT NULL
+);
+INSERT INTO estatus_auditoria(name) VALUES ("Estatus 1");
+INSERT INTO estatus_auditoria(name) VALUES ("Estatus 2");
+
+
+
+
+ -- Creacion del catalogo de organo_fiscalizador
+CREATE TABLE dependencia( 
+    id serial PRIMARY KEY,
+    name VARCHAR (50) UNIQUE NOT NULL
+);
+
+CREATE TABLE organismos( 
+    id serial PRIMARY KEY,
+    name VARCHAR (50) UNIQUE NOT NULL
+);
