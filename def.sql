@@ -1,7 +1,9 @@
 /*
     La tabla programas guarda el formulario de PRAs en una sola peticion
     Los comentarios señalan las caracteristicas y el funcionamiento de 
-    las partes de la base de datos
+    las partes de la base de datos.
+    Las tablas a las que apuntan las llaves externas de la tabla principal
+    pras son los catalogos que se requiere.
 */
 
 
