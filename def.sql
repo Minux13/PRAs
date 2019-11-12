@@ -91,3 +91,61 @@ CREATE TABLE entidades(
 );
 
 
+
+
+ --Municipios
+CREATE TABLE municipios(
+    id serial PRIMARY KEY,
+    name VARCHAR (50) UNIQUE NOT NULL
+);
+INSERT INTO municipios(name) VALUES ("Abasolo");
+INSERT INTO municipios(name) VALUES ("Agualeguas");
+INSERT INTO municipios(name) VALUES ("Los Aldamas");
+INSERT INTO municipios(name) VALUES ("Allende");
+INSERT INTO municipios(name) VALUES ("Anahuac");
+INSERT INTO municipios(name) VALUES ("Apodaca");
+INSERT INTO municipios(name) VALUES ("Aramberri");
+INSERT INTO municipios(name) VALUES ("Bustamante");
+INSERT INTO municipios(name) VALUES ("Cadereyta Jimenez");
+INSERT INTO municipios(name) VALUES ("Carmen");
+INSERT INTO municipios(name) VALUES ("Cerralvo");
+INSERT INTO municipios(name) VALUES ("Cienega de Flores");
+INSERT INTO municipios(name) VALUES ("China");
+INSERT INTO municipios(name) VALUES ("Dr. Arroyo");
+INSERT INTO municipios(name) VALUES ("Dr. Coss");
+INSERT INTO municipios(name) VALUES ("Dr. Gonzalez");
+INSERT INTO municipios(name) VALUES ("Galeana");
+INSERT INTO municipios(name) VALUES ("Garcia");
+INSERT INTO municipios(name) VALUES ("San Pedro Garza Garcia");
+INSERT INTO municipios(name) VALUES ("Gral. Bravo");
+INSERT INTO municipios(name) VALUES ("Gral. Escobedo");
+INSERT INTO municipios(name) VALUES ("Gral. Teran");
+INSERT INTO municipios(name) VALUES ("Gral. Trevi");
+INSERT INTO municipios(name) VALUES ("Gral. Zaragoza");
+INSERT INTO municipios(name) VALUES ("Gral. Zuazua");
+INSERT INTO municipios(name) VALUES ("Guadalupe");
+INSERT INTO municipios(name) VALUES ("Los Herreras");
+INSERT INTO municipios(name) VALUES ("Higueras");
+INSERT INTO municipios(name) VALUES ("Hualahuises");
+INSERT INTO municipios(name) VALUES ("Iturbide");
+INSERT INTO municipios(name) VALUES ("Juarez");
+INSERT INTO municipios(name) VALUES ("Lampazos de Naranjo");
+INSERT INTO municipios(name) VALUES ("Linares");
+INSERT INTO municipios(name) VALUES ("Marin");
+INSERT INTO municipios(name) VALUES ("Melchor Ocampo");
+INSERT INTO municipios(name) VALUES ("Mier y Noriega");
+INSERT INTO municipios(name) VALUES ("Mina");
+INSERT INTO municipios(name) VALUES ("Montemorelos");
+INSERT INTO municipios(name) VALUES ("Monterrey");
+INSERT INTO municipios(name) VALUES ("Paras");
+INSERT INTO municipios(name) VALUES ("Pesqueria");
+INSERT INTO municipios(name) VALUES ("Los Ramones");
+INSERT INTO municipios(name) VALUES ("Rayones");
+INSERT INTO municipios(name) VALUES ("Sabinas Hidalgo");
+INSERT INTO municipios(name) VALUES ("Salinas Victoria");
+INSERT INTO municipios(name) VALUES ("San Nicolas de los Garza");
+INSERT INTO municipios(name) VALUES ("Hidalgo");
+INSERT INTO municipios(name) VALUES ("Santa Catarina");
+INSERT INTO municipios(name) VALUES ("Santiago");
+INSERT INTO municipios(name) VALUES ("Vallecillo");
+INSERT INTO municipios(name) VALUES ("Villaldam");
