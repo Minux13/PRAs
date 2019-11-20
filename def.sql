@@ -9,23 +9,23 @@
 
 CREATE TABLE IF NOT EXISTS pras( 
     id serial PRIMARY KEY,
-    tipo_auditoria INTEGER REFERENCES tipo_auditoria(id),           --Llave externa de la tabla tipo_auditoria ((DE LAS LÍNEAS 43 A 51))
-    organo_fiscalizador INTEGER REFERENCES organo_fiscalizador(id), --Llave externa de la tabla organo_fiscalizador ((DE LAS LÍNEAS 56 A 64))
+    tipo_auditoria INTEGER REFERENCES tipo_auditoria_id(id),           --Llave externa de la tabla tipo_auditoria ((DE LAS LÍNEAS 43 A 51))
+    organo_fiscalizador INTEGER REFERENCES organo_fiscalizador_id(id), --Llave externa de la tabla organo_fiscalizador ((DE LAS LÍNEAS 56 A 64))
     anio_cuenta_publica DATE,
     num_auditoria VARCHAR (50),
-    tipo_entidad INTEGER REFERENCES tipo_entidad(id),               --Llave externa de la tabla tipo_entidad ((DE LA LÍNEA 77 A 83))
-    entidad INTEGER REFERENCES entidades(id) ,                      --Llave externa de la tabla entidades
-    estatus_auditoria INTEGER REFERENCES estatus_auditorias(id),    --Llave externa de la tabla estatus_auditorias
-    fondo INTEGER REFERENCES fondos(id),                            --Llave externa de la tabla fondos
+    tipo_entidad INTEGER REFERENCES tipo_entidad_id(id),               --Llave externa de la tabla tipo_entidad ((DE LA LÍNEA 77 A 83))
+    entidad INTEGER REFERENCES entidades_id(id) ,                      --Llave externa de la tabla entidades
+    estatus_auditoria INTEGER REFERENCES estatus_auditorias_id(id),    --Llave externa de la tabla estatus_auditorias
+    fondo INTEGER REFERENCES fondos_id(id),                            --Llave externa de la tabla fondos
     inicio DATE, 
     cierre DATE, 
-    municipio INTEGER REFERENCES municipios(id),                    --Llave externa de la tabla municipios ((DE LAS LÍNEAS 95 A 151))
+    municipio INTEGER REFERENCES municipios_id(id),                    --Llave externa de la tabla municipios ((DE LAS LÍNEAS 95 A 151))
     obra VARCHAR(150),
-    accion INTEGER REFERENCES acciones(id),                         --Llave externa de la tabla acciones
-    observacion INTEGER REFERENCES observaciones(id),               --Llave externa de la tabla observaciones
-    estatus_observacion INTEGER REFERENCES observaciones(id),       --Llave externa de la tabla estatus de observaciones
-    clasificacion INTEGER REFERENCES clasificaciones(id),           --Llave externa de la tabla clasificaciones
-    tipo INTEGER REFERENCES tipos(id),                              --Llave externa de la tabla tipos
+    accion INTEGER REFERENCES acciones_id(id),                         --Llave externa de la tabla acciones
+    observacion INTEGER REFERENCES observaciones_id(id),               --Llave externa de la tabla observaciones
+    estatus_observacion INTEGER REFERENCES observaciones_id(id),       --Llave externa de la tabla estatus de observaciones
+    clasificacion INTEGER REFERENCES clasificaciones_id(id),           --Llave externa de la tabla clasificaciones
+    tipo INTEGER REFERENCES tipos_id(id),                              --Llave externa de la tabla tipos
     observado FLOAT,
     solventado FLOAT,
     pendiente_solventar FLOAT,
