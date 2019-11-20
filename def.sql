@@ -1,5 +1,5 @@
 /*
-    La tabla programas guarda el formulario de PRAs en una sola peticion
+    La tabla pras guarda el formulario de PRAs en una sola peticion
     Los comentarios señalan las caracteristicas y el funcionamiento de 
     las partes de la base de datos.
     Las tablas a las que apuntan las llaves externas de la tabla principal
@@ -9,17 +9,17 @@
 
 CREATE TABLE IF NOT EXISTS pras( 
     id serial PRIMARY KEY,
-    tipo_auditoria INTEGER REFERENCES tipo_auditoria(id),           --Llave externa de la tabla tipo_auditoria
-    organo_fiscalizador INTEGER REFERENCES organo_fiscalizador(id), --Llave externa de la tabla organo_fiscalizador
+    tipo_auditoria INTEGER REFERENCES tipo_auditoria(id),           --Llave externa de la tabla tipo_auditoria ((DE LAS LÍNEAS 43 A 51))
+    organo_fiscalizador INTEGER REFERENCES organo_fiscalizador(id), --Llave externa de la tabla organo_fiscalizador ((DE LAS LÍNEAS 56 A 64))
     anio_cuenta_publica DATE,
     num_auditoria VARCHAR (50),
-    tipo_entidad INTEGER REFERENCES tipo_entidad(id),               --Llave externa de la tabla tipo_entidad
-    entidad INTEGER REFERENCES entidades(id) ,                      --Llave externa de la tabla entidades 
+    tipo_entidad INTEGER REFERENCES tipo_entidad(id),               --Llave externa de la tabla tipo_entidad ((DE LA LÍNEA 77 A 83))
+    entidad INTEGER REFERENCES entidades(id) ,                      --Llave externa de la tabla entidades
     estatus_auditoria INTEGER REFERENCES estatus_auditorias(id),    --Llave externa de la tabla estatus_auditorias
     fondo INTEGER REFERENCES fondos(id),                            --Llave externa de la tabla fondos
     inicio DATE, 
     cierre DATE, 
-    municipio INTEGER REFERENCES municipios(id),                    --Llave externa de la tabla municipios
+    municipio INTEGER REFERENCES municipios(id),                    --Llave externa de la tabla municipios ((DE LAS LÍNEAS 95 A 151))
     obra VARCHAR(150),
     accion INTEGER REFERENCES acciones(id),                         --Llave externa de la tabla acciones
     observacion INTEGER REFERENCES observaciones(id),               --Llave externa de la tabla observaciones
@@ -41,14 +41,14 @@ CREATE TABLE IF NOT EXISTS pras(
 
 
  -- Creacion del catalogo de auditorías
-CREATE TABLE auditorias( 
+CREATE TABLE tipo_auditoria( 
     id serial PRIMARY KEY,
     name VARCHAR (50) UNIQUE NOT NULL
 );
-INSERT INTO auditorias(name) VALUES ("Financiera");
-INSERT INTO auditorias(name) VALUES ("Desempeño");
-INSERT INTO auditorias(name) VALUES ("Obra Pública");
-INSERT INTO auditorias(name) VALUES ("Normativas");
+INSERT INTO tipo_auditoria(name) VALUES ("Financiera");
+INSERT INTO tipo_auditoria(name) VALUES ("Desempeño");
+INSERT INTO tipo_auditoria(name) VALUES ("Obra Pública");
+INSERT INTO tipo_auditoria(name) VALUES ("Normativas");
 
 
 
