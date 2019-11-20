@@ -1,6 +1,6 @@
 ## Formulario de Auditorias 
 
-En la especificación se especifican los campos que tiene un formulario (pantalla de captura) para una auditoria. Los campos de una auditoría **pras** (pendiente cambiar nombre) son:
+En la especificación se mencionan los campos que tiene un formulario (pantalla de captura) para una auditoria. Los campos de una auditoría **pras** (pendiente cambiar nombre) son:
 
 ![alt text](https://github.com/Minux13/PRAs/blob/master/imagesMD/tabla_pras.png?raw=true)
 
@@ -23,19 +23,19 @@ En la especificación hay varios campos que son de selección:
 
 ### (Ejemplo) Punto 1 de la especificación "Tipo Auditoria"
 
+El campo de Tipo de Auditoría se debe de ver de la siguiente manera:
+
 ![alt text](https://github.com/Minux13/PRAs/blob/master/imagesMD/select.jpg?raw=true)
 
 En código HTML es:
 
 ![alt text](https://github.com/Minux13/PRAs/blob/master/imagesMD/select.png?raw=true)
 
-Donde los *value* son los valores **ID** en la tabla ***tipo_auditoria*** de la base de datos.
-
-En la base de datos el catálogo para este *select* se creo asi:
+Los *<select>* y *</select>* representa y encienran el campo tipo_auditoria, donde los *value* son los valores de **ID** en la tabla ***tipo_auditoria*** de la base de datos. En la base de datos este catálogo para este *select* se creo asi:
 
 ![alt text](https://github.com/Minux13/PRAs/blob/master/imagesMD/tabla_tipo_auditorias.jpg?raw=true)
 
-El **ID** se autogenero pero ese valor se guardará en la columna ***tipo_auditoria_id*** de la tabla ***pras*** y que apunta al valor de la tabla ***tipo_auditoria***.
+El **ID** se autogenero al insertar la opción y cuando se capturé la auditoría se guardará el select ***Tipo de Autoría*** en la columna ***tipo_auditoria_id*** de la tabla ***pras*** y que apunta al valor de la tabla ***tipo_auditoria***.
 
 
 
