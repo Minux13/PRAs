@@ -4,7 +4,7 @@ En la especificación se mencionan los campos que tiene un formulario (pantalla 
 
 ![alt text](https://github.com/Minux13/PRAs/blob/master/imagesMD/tabla_pras.png?raw=true)
 
-En la especificación hay varios campos que son de selección:
+En la especificación hay varios campos que son de tipo selección:
 
  - tipo_auditoria
  - organo_fiscalizador
@@ -31,7 +31,7 @@ En código HTML es:
 
 ![alt text](https://github.com/Minux13/PRAs/blob/master/imagesMD/select.png?raw=true)
 
-Los *<select>* y *</select>* representa y encienran el campo tipo_auditoria, donde los *value* son los valores de **ID** en la tabla ***tipo_auditoria*** de la base de datos. En la base de datos este catálogo para este *select* se creo asi:
+Los *\<select\>* y *\</select\>* representa y encienran el campo tipo_auditoria, donde los *value* son los valores de **ID** en la tabla ***tipo_auditoria*** de la base de datos. En la base de datos este catálogo para este *select* se creo asi:
 
 ![alt text](https://github.com/Minux13/PRAs/blob/master/imagesMD/tabla_tipo_auditorias.jpg?raw=true)
 
