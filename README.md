@@ -39,6 +39,6 @@ El **ID** se autogenero al insertar la opción y cuando se capturé la auditorí
 
 
 
-Se requiere hacer los mismo para los demás campos con llave primaria dentro de ***pras***:
+Se requiere hacer los mismo para los demás campos tipo seleccion que en la base de datos llevan llave primaria dentro de la tabla ***pras***:
  - Crear la tabla que contendrá los valores (opciones del select).
  - Insertar los valores de esas opciones.
