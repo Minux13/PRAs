@@ -39,19 +39,19 @@ Este *select* se alimenta de la base de datos, del catálogo **tipo_auditoria** 
 
 Se requiere crear las tablas en la base de datos para los demás campos de tipo selección, que en la base de datos se guardan en la tabla ***pras*** y llevan una llave primaria que apunta a su catálogo. Como en el ejemplo de **tipo de auditoria** se requiere:
  - Crear la tabla (una tabla por cada campo tipo selección). Las tablas que faltan son:
-    - tipo_auditoria ( Se describe en este ejemplo )
-    - organo_fiscalizador (Ya esta creada)
-    - tipo_entidad (Ya esta creada)
+    - tipo_auditoria <span style="color:blue">( Se describe en este ejemplo )</span>
+    - organo_fiscalizador <span style="color:blue">(Ya esta creada)</span>
+    - tipo_entidad <span style="color:blue">(Ya esta creada)</span>
     - entidades
     - estatus_auditorias
     - fondos
-    - municipios (Ya esta creada)
+    - municipios <span style="color:blue">(Ya esta creada)</span>
     - acciones
     - observaciones
     - estatus observaciones
     - clasificaciones
     - tipos
 
- - Insertar los valores u opciones para cada uno de estos campos tipo selección.
+ - Insertar en las tablas creadas los valores u opciones correspondientes para cada uno de estos campos tipo selección.
 
 
