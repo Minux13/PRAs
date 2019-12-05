@@ -4,7 +4,7 @@ En la especificación se mencionan los campos que tiene un formulario (pantalla 
 
 ![alt text](https://github.com/Minux13/PRAs/blob/master/imagesMD/tabla_pras.png?raw=true)
 
-En la especificación hay varios campos que son de tipo selección:
+En la especificación hay varios puntos que son campos de tipo selección:
 
  - tipo_auditoria
  - organo_fiscalizador
@@ -15,7 +15,7 @@ En la especificación hay varios campos que son de tipo selección:
  - municipios
  - acciones
  - observaciones
- - observaciones
+ - estatus observaciones
  - clasificaciones
  - tipos
 
@@ -31,14 +31,27 @@ En código HTML es:
 
 ![alt text](https://github.com/Minux13/PRAs/blob/master/imagesMD/select.png?raw=true)
 
-Los *\<select\>* y *\</select\>* representa y encienran el campo tipo_auditoria, donde los *value* son los valores de **ID** en la tabla ***tipo_auditoria*** de la base de datos. En la base de datos este catálogo para este *select* se creo asi:
+Los *\<select\>* y *\</select\>* representa y encienran el campo tipo_auditoria, donde *\<option\>* y *\</option\>* contienen todas las tipos de auditoria que se especifico. Los *value* son los valores de **ID** en la tabla ***tipo_auditoria*** de la base de datos.
+
+Este *select* se alimenta de la base de datos, del catálogo **tipo_auditoria** y se creo así:
 
 ![alt text](https://github.com/Minux13/PRAs/blob/master/imagesMD/tabla_tipo_auditorias.jpg?raw=true)
 
-El **ID** se autogenero al insertar la opción y cuando se capturé la auditoría se guardará el select ***Tipo de Autoría*** en la columna ***tipo_auditoria_id*** de la tabla ***pras*** y que apunta al valor de la tabla ***tipo_auditoria***.
+Se requiere crear las tablas en la base de datos para los demás campos de tipo selección, que en la base de datos se guardan en la tabla ***pras*** y llevan una llave primaria que apunta a su catálogo. Como en el ejemplo de **tipo de auditoria** se requiere:
+ - Crear la tabla (una tabla por cada campo tipo selección). Las tablas que faltan son:
+    - tipo_auditoria <span style="color:blue">( Se describe en este ejemplo )</span>
+    - organo_fiscalizador <span style="color:blue">(Ya esta creada)</span>
+    - tipo_entidad <span style="color:blue">(Ya esta creada)</span>
+    - entidades
+    - estatus_auditorias
+    - fondos
+    - municipios <span style="color:blue">(Ya esta creada)</span>
+    - acciones
+    - observaciones
+    - estatus observaciones
+    - clasificaciones
+    - tipos
+
+ - Insertar en las tablas creadas los valores u opciones correspondientes para cada uno de estos campos tipo selección.
 
 
-
-Se requiere hacer los mismo para los demás campos tipo seleccion que en la base de datos llevan llave primaria dentro de la tabla ***pras***:
- - Crear la tabla que contendrá los valores (opciones del select).
- - Insertar los valores de esas opciones.
